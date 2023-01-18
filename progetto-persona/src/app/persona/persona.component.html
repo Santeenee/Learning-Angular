@@ -1,0 +1,11 @@
+<div *ngFor="let persona of persone; let nRiga = index">
+  <p [ngClass]="{ red: persona.importo < 0 }">
+    {{ nRiga + 1 }} - {{ persona.nominativo }}: {{ persona.importo }}€
+  </p>
+</div>
+
+<input type="text" [(ngModel)]="inputNome" placeholder="persona" />
+<input type="text" [(ngModel)]="inputImporto" placeholder="importo" />
+<button (click)="add(inputNome, inputImporto)">Add</button>
+
+<p>{{ persone[persone.length - 1]["nominativo"] }}</p>
